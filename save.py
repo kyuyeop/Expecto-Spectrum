@@ -36,7 +36,7 @@ def multi_hot_encoding(x, len):
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-for i in tqdm(glob('v5_13_2/*.fits')):
+for i in tqdm(glob('*.fits')):
     data = fits.open(i)
     y = data[1].data['model']
     np.save(f'dataset/spec/{str(counter).zfill(6)}.npy',data[1].data['FLUX'])
